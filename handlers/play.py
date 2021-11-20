@@ -74,7 +74,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     )
     draw.text((190, 630), f"Görüntülenme sayısı: {views}", (255, 255, 255), font=font)
     draw.text((190, 670),
-        f"Ekleyen kişi: {requested_by}",
+        f"Elave eden adam: {requested_by}",
         (255, 255, 255),
         font=font,
     )
@@ -85,7 +85,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
 
 
-@Client.on_message(command(["play", "oynat"]) 
+@Client.on_message(command(["play", "oxu"]) 
                    & filters.group
                    & ~filters.edited 
                    & ~filters.forwarded
@@ -100,7 +100,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "EfsaneMusicVaves"
+        user.first_name = "DBMtagbot"
     usar = user
     wew = usar.id
     try:
@@ -112,24 +112,24 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "<b>Önce beni Grubunun yöneticisi olarak ekle!</b>")
+                        "<b>Evvelce meni admin et!</b>")
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "**Müzik asistanı bu gruba müzik çalmak için katıldı 🎵**")
+                        message.chat.id, "**Musiqi asistantı mahnı oxutmaq üçün qatıldı 🎵**")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"<b>🛑 Taşan Bekleme Hatası 🛑</b> \n\Merhaba {user.first_name}, yardımcı userbot, yoğun katılma istekleri nedeniyle grubunuza katılamadı. Userbot'un grupta yasaklı olmadığından emin olun ve daha sonra yeniden deneyin!")
+                        f"<b>🛑 Taşan Gözleme Xetası 🛑</b> \n\Salam {user.first_name}, kömekçi userbot, yoğun qatılma istekleri sebebiyle grubunuza qatılmadı. Userbot'un qrupda xetalı olmadığından emin olun ve daha sonra yeniden cehd edin!")
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"<i>Merhaba {user.first_name}, yardımcı userbot bu sohbette değil, yöneticiden göndermesini isteyin /play ilk kez eklemek için komut.</i>")
+            f"<i>Salam {user.first_name}, komekci userbot bu sohbette deyil, adminden göndermesini isteyin /play ilk defe elave etmek üçün komanda.</i>")
         return
     
     audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
@@ -138,7 +138,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"❌ Daha uzun videolar {DURATION_LIMIT} dakikaların oynatılamasına izin verilmez!"
+                f"❌ Daha uzun videolar {DURATION_LIMIT} deqiqelerin oynadılamasını qoymaram!"
             )
 
         file_name = get_file_name(audio)
@@ -146,14 +146,14 @@ async def play(_, message: Message):
         thumb_name = "https://i.ibb.co/Qkz78hx/images-1.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
-        views = "Yerel olarak eklendi"
+        views = "Yerel olaraq elave edildi"
 
         keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
                         text="Kanal 🔊",
-                        url="https://t.me/Sohbetdestek")
+                        url="https://t.me/DBMsohbet")
                    
                 ]
             ]
@@ -190,10 +190,10 @@ async def play(_, message: Message):
                 [
                     [
                         InlineKeyboardButton(
-                            text="İzlemek için 🎬",
+                            text="İzlemek üçün 🎬",
                             url=f"{url}"),
                         InlineKeyboardButton(
-                            text="İndir 📥",
+                            text=f"Yükle 📥",
                             url=f"{durl}")
 
                     ]
@@ -208,7 +208,7 @@ async def play(_, message: Message):
                     [
                         [
                             InlineKeyboardButton(
-                                text="İzlemek için 🎬",
+                                text="İzlemek üçün 🎬",
                                 url=f"https://youtube.com")
 
                         ]
@@ -223,10 +223,10 @@ async def play(_, message: Message):
     else:
         if len(message.command) < 2:
             return await lel.edit("🧐 **Söylemek istediğin şarkı nedir?**")
-        await lel.edit("🔎 **Lütfen bekleyiniz...**")
+        await lel.edit("🔎 **Zehmet olmasa gözleyin...**")
         query = message.text.split(None, 1)[1]
         # print(query)
-        await lel.edit("🔁 **Sesler İşleniyor..🔥**")
+        await lel.edit("🔁 **Sesler Başlayır..🔥**")
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
@@ -248,8 +248,8 @@ async def play(_, message: Message):
                 secmul *= 60
                 
         except Exception as e:
-            await lel.edit(
-                "❌ Şarkı bulunamadı.\n\nBaşka bir şarkı deneyin veya belki düzgün heceleyin."
+            await lel.edit
+                "❌ Mahnı tapılmadı.\n\nBaşqa bir mahnı axtarın veya adını düzgün yazın."
             )
             print(str(e))
             return
@@ -258,10 +258,10 @@ async def play(_, message: Message):
                 [
                     [
                         InlineKeyboardButton(
-                            text="İzlemek için 🎬",
+                            text="İzlemek üçün 🎬",
                             url=f"{url}"),
                         InlineKeyboardButton(
-                            text="İndir 📥",
+                            text="Yükle 📥",
                             url=f"{durl}")
 
                     ]
