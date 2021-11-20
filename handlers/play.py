@@ -268,7 +268,7 @@ async def play(_, message: Message):
                 ]
             )
         
-        if (dur / 60) > DURATION_LIMIT:
+        if (dayan / 60) > DURATION_LIMIT:
              await lel.edit(f"❌ Daha uzun videolar {DURATION_LIMIT} dakikaların oynatılamasına izin verilmez!")
              return
         requested_by = message.from_user.first_name
