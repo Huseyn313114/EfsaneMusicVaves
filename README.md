@@ -1,4 +1,4 @@
-<h2 align="centre">Telegram Grup Müzik Çalar Botu 🎵</h2>
+<h2 align="centre">Telegram Qrup Mahnı Çalan Botu 🎵</h2>
 
 ### Telegram qrupunun sesli söhbetinde mahnı oxuya bilen bir bot
 ### Aktiv işleyir...⚜️
