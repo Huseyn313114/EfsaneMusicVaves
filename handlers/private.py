@@ -9,30 +9,30 @@ from helpers.filters import command, other_filters2
 async def start(_, message: Message):
     await message.reply_photo("https://i.ibb.co/khRz42f/Turkish-Voice.jpg")
     await message.reply_text(
-        f"""**Merhaba, {message.from_user.mention} 🎵
-Sesli sohbetlerde müzik çalabilen botum. Ban yetkisiz, Ses yönetimi yetkisi verip, Asistanı gruba ekleyiniz.\n\nDüzen Tasarım [Talia Müzik 🎙️](https://t.me/Sohbetdestek).
+        f"""**Salam, {message.from_user.mention} 🎵
+Sesli sohbetlerde musiqi çalabilen botam. Ban yetkisiz, Ses yönetimi yetkisi verib, Asistantı qrupa elave edin.\n\nDüzenleme [DBMBOSSdu 🇦🇿](https://t.me/DBMsohbet).
  **""",
 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Grubunuza Ekle ➕", url="https://t.me/Efsanestar_bot?startgroup=true"
+                        "➕ Qrupuna  Elave ele ➕", url="https://t.me/Efsanestar_bot?startgroup=true"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔊 Asistan", url="https://t.me/Efsanestar_bot" 
+                        "🔊 Asistant", url="https://t.me/DBMmusicasistantbot" 
                     ),
                     InlineKeyboardButton(
-                        "💬 Sohbet", url="https://t.me/Sohbetskyfall"
+                        "💬 Sohbet", url="https://t.me/DBMsohbet"
                     ),
                     InlineKeyboardButton(
-                        "🙎‍♂️ Geliştirici", url="https://t.me/Mahoaga") 
+                        "🙎‍♂️ Sahibim", url="https://t.me/DBMBOSSdu") 
                 ],
                 [
                     InlineKeyboardButton(
-                        "🧩 Kaynak Kodu", url="https://github.com/Mehmetbaba55"
+                        "🧩 Github", url="https://github.com/Huseyn313114"
                     )
                 ]
             ]
@@ -47,7 +47,7 @@ async def bilgi(_, message: Message):
              [
                  [
                      InlineKeyboardButton(
-                         "👨‍🔧 Geliştirici", url="https://t.me/Sohbetdestek")
+                         "👨‍🔧 Sahibim", url="https://t.me/DBMBOSSdu")
                  ]
              ]
          )
